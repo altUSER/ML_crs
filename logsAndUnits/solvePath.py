@@ -11,14 +11,13 @@ def findFiles(path, lst=[]):
         path += "/"
 
     for obj in os.listdir(path):
-        print("Try", obj)
         if os.path.isdir(path + obj):
             findFiles(path+obj, lst)
-            l.info("Find dir")
+            l.debug("Find dir" + obj)
         else:
             lst.append(path+obj)
 
     return(lst)
 
 if __name__ == "__main__":
-    print(findFiles("dataset/orign/"))
+    print(findFiles("C:/dv/ML_crs/logsAndUnits/dataset/origin"))
